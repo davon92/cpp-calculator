@@ -7,7 +7,7 @@ using namespace Calculator;
 calculator calc;
 double value1;
 double value2;
-int option;
+
 bool bExit = false;
 
 int main()
@@ -54,6 +54,7 @@ int main()
 
 int calculator::AskForOperation()
 {
+    int option;
     cout << "Please select the operation you would like to make" << endl;
     cout << "1. ADD\n 2. SUBTRACT\n 3. Multiply\n 4. Divide\n 5. Close Application"<< endl;
     cin >> option;
@@ -85,8 +86,9 @@ double calculator::Multiply(double input1, double input2)
 
 double calculator::Divide(double input1, double input2)
 {
-    if(input2 <= 0 || input1 <=0)
+    if(input2 <= 0 )
     {
+        cout << "DivideBy Zero Error" << endl;
         return 0;
     }
     return input1/input2;
